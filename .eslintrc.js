@@ -10,17 +10,9 @@ module.exports = {
     browser: true
   },
 
-  extends: [
-    'standard',
-    // https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential'
-  ],
+  extends: ['standard', 'plugin:vue/essential'],
 
-  // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
+  plugins: ['vue'],
 
   globals: {
     'ga': true, // Google Analytics
@@ -48,6 +40,8 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
     'prefer-promise-reject-errors': 'off',
+    "quotes": ["warn", "double"],
+    "semi": ["warn", "always"],
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
