@@ -9,3 +9,9 @@ export default {
   name: "App"
 };
 </script>
+
+<style>
+.q-btn {
+  text-transform: none !important;
+}
+</style>

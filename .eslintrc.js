@@ -42,8 +42,22 @@ module.exports = {
     'prefer-promise-reject-errors': 'off',
     "quotes": ["warn", "double"],
     "semi": ["warn", "always"],
+    "space-before-function-paren": ["warn", "never"],
 
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "no-unused-vars": "warn",
+
+    "vue/html-closing-bracket-newline": ["warn", {
+      "singleline": "never",
+      "multiline": "never"
+    }],
+    "vue/max-attributes-per-line": ["warn", {
+      "singleline": 3,
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": true
+      }
+    }]
   }
 }

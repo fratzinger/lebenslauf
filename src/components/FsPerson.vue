@@ -7,7 +7,10 @@
           </div>
 
           <q-list bordered separator class="q-pa-md">
-            <q-item v-for="entry in characteristics" :key="entry.title" clickable v-ripple>
+            <q-item v-for="entry in characteristics"
+                    :key="entry.title"
+                    clickable
+                    v-ripple>
               <q-item-section class="text-bold">{{ entry.title }}</q-item-section>
               <q-item-section>{{ entry.value }}</q-item-section>
             </q-item>
@@ -16,8 +19,7 @@
 
         <q-img
           class="col-5"
-          src="https://cdn.quasar.dev/img/parallax2.jpg"
-        />
+          src="https://cdn.quasar.dev/img/parallax2.jpg"/>
       </q-card-section>
     </q-card>
 </template>
@@ -25,10 +27,10 @@
 <script>
 // import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
 export default {
-  name: "Boilerplate",
+  name: "FsPerson",
   components: {},
   props: {},
-  data () {
+  data() {
     return {
       characteristics: [
         {
@@ -48,8 +50,8 @@ export default {
   },
   computed: {},
   watch: {},
-  created () {},
-  mounted () {},
+  created() {},
+  mounted() {},
   methods: {}
 };
 </script>

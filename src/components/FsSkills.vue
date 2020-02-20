@@ -5,8 +5,7 @@
     class="text-light-blue q-ma-md"
     :value="0.1"
     size="50px"
-    color="light-blue"
-  ></q-circular-progress>
+    color="light-blue"></q-circular-progress>
   <q-linear-progress :value="0.1" class="q-mt-md"></q-linear-progress>
 </div>
 
@@ -15,16 +14,16 @@
 <script>
 // import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
 export default {
-  name: "Skills",
+  name: "FsSkills",
   components: {},
   props: {},
-  data () {
+  data() {
     return {};
   },
   computed: {},
   watch: {},
-  created () {},
-  mounted () {},
+  created() {},
+  mounted() {},
   methods: {}
 };
 </script>

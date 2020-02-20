@@ -11,8 +11,7 @@
           <q-timeline-entry
             title="Event Title"
             subtitle="February 22, 1986"
-            icon="fas fa-briefcase"
-          >
+            icon="fas fa-briefcase">
             <template v-slot:title>Wiss. Mitarbeiter - Fraunhofer IGP Rostock</template>
             <template v-slot:subtitle>seit {{ date.format(new Date(2017, 12), "MM/yyyy") }}</template>
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
@@ -35,13 +34,15 @@
             <q-timeline-entry :key="studium.title" :icon="studium.icon">
               <template v-slot:title>{{ studium.graduation }} {{ studium.title }}</template>
               <template
-                v-slot:subtitle
-              >{{ date.format(studium.start, "MM/yyyy") }} - {{ date.format(studium.end, "MM/yyyy") }}</template>
+                v-slot:subtitle>{{ date.format(studium.start, "MM/yyyy") }} - {{ date.format(studium.end, "MM/yyyy") }}</template>
               <div>
                 <span class="text-bold">
                   {{ studium.establishment }}
                 </span>
-                <q-chip color="primary" text-color="white" class="chip-grade" icon="fas fa-star"> {{ studium.grade }}
+                <q-chip color="primary"
+text-color="white"
+class="chip-grade"
+icon="fas fa-star"> {{ studium.grade }}
                 </q-chip>
               </div>
               <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
@@ -107,7 +108,7 @@ export default {
   name: "FsTimeline",
   components: {},
   props: {},
-  data () {
+  data() {
     return {
       date: {
         format
@@ -184,20 +185,20 @@ export default {
     };
   },
   computed: {
-    sortedStudiums () {
+    sortedStudiums() {
       const { sortOrder, entries } = this.studium;
       const order = (sortOrder > 0) ? "asc" : "desc";
       return _orderBy(entries, "end", order);
     },
-    sortedActivities () {
+    sortedActivities() {
       const { sortOrder, entries } = this.activity;
       const order = (sortOrder > 0) ? "asc" : "desc";
       return _orderBy(entries, "end", order);
     }
   },
   watch: {},
-  created () {},
-  mounted () {},
+  created() {},
+  mounted() {},
   methods: {}
 };
 </script>

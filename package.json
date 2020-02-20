@@ -25,7 +25,7 @@
     "@quasar/extras": "^1.5.1",
     "date-fns": "^2.9.0",
     "lodash-es": "^4.17.15",
-    "quasar": "^1.0.0"
+    "quasar": "^1.9.3"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",

@@ -8,8 +8,7 @@
           round
           @click="leftDrawerOpen = !leftDrawerOpen"
           icon="menu"
-          aria-label="Menu"
-        />
+          aria-label="Menu"/>
       </q-toolbar>
     </q-header>
 
@@ -22,15 +21,13 @@
         <EssentialLink
           v-for="link in personLinks"
           :key="link.title"
-          v-bind="link"
-        />
+          v-bind="link"/>
       </q-list>
       <q-list>
         <EssentialLink
           v-for="link in externalLinks"
           :key="link.title"
-          v-bind="link"
-        />
+          v-bind="link"/>
       </q-list>
     </q-drawer>
 
@@ -50,7 +47,7 @@ export default {
     EssentialLink
   },
 
-  data () {
+  data() {
     return {
       leftDrawerOpen: false,
       personLinks: [
