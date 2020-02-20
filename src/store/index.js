@@ -1,14 +1,26 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-// import example from './module-example'
-
 Vue.use(Vuex);
+
+//#region feathers
+
+import { FeathersVuex } from "feathers-vuex";
+
+Vue.use(FeathersVuex);
+
+const req = require.context("@/store/feathers/services", false, /.js$/);
+const servicePlugins = req.keys().map(path => req(path).default);
+
+import auth from "./feathers/auth";
+
+//#endregion
 
 export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      // example
+      ...servicePlugins,
+      auth
     },
 
     strict: process.env.DEV

@@ -43,6 +43,7 @@ module.exports = {
     "quotes": ["warn", "double"],
     "semi": ["warn", "always"],
     "space-before-function-paren": ["warn", "never"],
+    "spaced-comment": "off",
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',

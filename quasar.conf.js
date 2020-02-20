@@ -44,9 +44,8 @@ module.exports = function(ctx) {
       showProgress: true,
       gzip: false,
       analyze: true,
-      // Options below are automatically set depending on the env, set them if you want to override
-      // preloadChunks: false,
-      // extractCSS: false,
+
+      transpileDependencies: ["feathers-vuex"],
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack(cfg, { isServer, isClient }) {
