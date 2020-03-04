@@ -49,6 +49,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     "no-unused-vars": "warn",
 
+    "no-useless-constructor": "off",
+
     "vue/html-closing-bracket-newline": ["warn", {
       "singleline": "never",
       "multiline": "never"

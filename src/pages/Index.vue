@@ -1,7 +1,7 @@
 <template>
   <q-page id="content-index" class="flex flex-center">
     <div class="row">
-      <fs-person class="col-12"></fs-person>
+      <fs-person class="col-12 q-mb-2"></fs-person>
       <fs-timeline class="col-12"></fs-timeline>
       <fs-skills class="col-12"></fs-skills>
       <fs-publications class="col-12"></fs-publications>

@@ -9,7 +9,7 @@ import { FeathersVuex } from "feathers-vuex";
 
 Vue.use(FeathersVuex);
 
-const req = require.context("@/store/feathers/services", false, /.js$/);
+const req = require.context("./feathers/services", false, /.js$/);
 const servicePlugins = req.keys().map(path => req(path).default);
 
 import auth from "./feathers/auth";
@@ -18,12 +18,10 @@ import auth from "./feathers/auth";
 
 export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
-    modules: {
+    plugins: [
       ...servicePlugins,
       auth
-    },
-
-    strict: process.env.DEV
+    ]
   });
 
   return Store;

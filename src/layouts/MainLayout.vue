@@ -2,35 +2,30 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          icon="menu"
-          aria-label="Menu"/>
+        <q-btn flat
+               dense
+               round
+               @click="leftDrawerOpen = !leftDrawerOpen"
+               icon="menu"
+               aria-label="Menu"/>
       </q-toolbar>
     </q-header>
-
     <q-drawer v-model="leftDrawerOpen"
               show-if-above
               bordered
               mini
               content-class="bg-grey-1">
       <q-list class="q-mb-xl">
-        <EssentialLink
-          v-for="link in personLinks"
+        <essential-link v-for="link in personalUrls"
           :key="link.title"
           v-bind="link"/>
       </q-list>
       <q-list>
-        <EssentialLink
-          v-for="link in externalLinks"
+        <essential-link v-for="link in externalUrls"
           :key="link.title"
           v-bind="link"/>
       </q-list>
     </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -39,52 +34,44 @@
 
 <script>
 import EssentialLink from "components/EssentialLink";
+import { makeFindMixin } from "feathers-vuex";
+
+import { mapGetters } from "vuex";
 
 export default {
   name: "MainLayout",
-
   components: {
     EssentialLink
   },
-
+  mixins: [makeFindMixin({ service: "urls" })],
   data() {
     return {
-      leftDrawerOpen: false,
-      personLinks: [
-        {
-          title: "Github",
-          caption: "Github",
-          icon: "fab fa-github",
-          link: "https://github.com/fratzinger"
-        },
-        {
-          title: "LinkedIn",
-          caption: "LinkedIn - Frederik Schmatz",
-          icon: "fab fa-linkedin-in",
-          link: "https://www.linkedin.com/in/f-schmatz/"
-        },
-        {
-          title: "Researchgate",
-          caption: "Researchgate - Frederik Schmatz",
-          icon: "fab fa-researchgate",
-          link: "https://www.researchgate.net/profile/Frederik_Schmatz"
-        }
-      ],
-      externalLinks: [
-        {
-          title: "Fraunhofer IGP",
-          caption: "Fraunhofer IGP",
-          icon: "fas fa-building",
-          link: "https://www.igp.fraunhofer.de/"
-        },
-        {
-          title: "Hanseatic Efficiency",
-          caption: "Shell Eco Marathon",
-          icon: "fas fa-car",
-          link: "https://www.hro-sem.de/"
-        }
-      ]
+      leftDrawerOpen: false
     };
+  },
+  computed: {
+    ...mapGetters("urls", {
+      findUrlsInStore: "find"
+    }),
+    urlsParams() {
+      return {
+        query: {}
+      };
+    },
+    personalUrls() {
+      return this.findUrlsInStore({
+        query: {
+          type: "personal"
+        }
+      }).data;
+    },
+    externalUrls() {
+      return this.findUrlsInStore({
+        query: {
+          type: "external"
+        }
+      }).data;
+    }
   }
 };
 </script>

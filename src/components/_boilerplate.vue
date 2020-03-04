@@ -8,13 +8,13 @@ export default {
   name: "Boilerplate",
   components: {},
   props: {},
-  data () {
+  data() {
     return {};
   },
   computed: {},
   watch: {},
-  created () {},
-  mounted () {},
+  created() {},
+  mounted() {},
   methods: {}
 };
 </script>
