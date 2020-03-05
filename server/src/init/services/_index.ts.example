@@ -1,0 +1,12 @@
+import from;
+
+const asObject = {
+
+};
+
+const asArray = Object.values(asObject);
+
+export {
+
+  asArray as default
+};
