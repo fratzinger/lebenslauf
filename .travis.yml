@@ -7,4 +7,4 @@ before_install:
 install:
   npm i
 script:
-  npm run 
+  npm run test
