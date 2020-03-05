@@ -1,9 +1,0 @@
-export default {
-  service: "activities",
-  isFake: true,
-  entries: [
-    {
-
-    }
-  ]
-}
