@@ -6,7 +6,5 @@ before_install:
   cd ./server
 install:
   npm i
-before_script:
-  cd ./server
 script:
   npm run 
