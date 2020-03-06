@@ -1,0 +1,19 @@
+{
+  "name": "lebenslauf",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "cd server && npm i",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fratzinger/lebenslauf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fratzinger/lebenslauf/issues"
+  },
+  "homepage": "https://github.com/fratzinger/lebenslauf#readme"
+}
