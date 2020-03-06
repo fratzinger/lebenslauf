@@ -7,7 +7,7 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "postinstall": "cd server && npm i",
+    "postinstall": "cd server && rm -rf node_modules && npm i",
     "build": "cd server && npm build",
     "start": "cd server && node lib/",
   },
