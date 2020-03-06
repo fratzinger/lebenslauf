@@ -8,8 +8,8 @@
   },
   "scripts": {
     "postinstall": "cd server && npm i",
-    "start": "cd server && npm start",
-    "build": "cd server && npm "
+    "build": "cd server && npm build",
+    "start": "cd server && node lib/",
   },
   "repository": {
     "type": "git",
