@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fratzinger/lebenslauf/issues"
   },
-  "homepage": "https://github.com/fratzinger/lebenslauf#readme"
+  "homepage": "https://github.com/fratzinger/lebenslauf#readme",
+  "devDependencies": {
+    "shx": "^0.3.2"
+  }
 }
