@@ -2,9 +2,10 @@ language: node_js
 node_js: node
 notifications:
   email: false
-before_install:
-  cd ./server
-install:
-  npm i
-script:
-  npm run test
+before_install: cd ./server
+install: npm i
+script: npm run test
+deploy:
+  api_key:
+  secure: UuvEpmL1x2hiRJpp3h5j2O+wHDj3GmM7tLiI+sD3Mw0HLTPVWe0cBll6ztBBbosYjv80x3Lbopa9uwxOxoZx2t8CH5xtHvNGzI0WEQcA1LOh/KJcHBSit22QziB3XDyfyz8B/5SHcXZj07MVs9u2rwxhLFHRSHw1KBIc5R/6tl/3eol6suXbu9aA4MGI91bfZuMwh7/QmI/IF90QnGpjDbePjLtPtu0n9fJ/zZaZGW0/wc7muzMj6ip4yBd2vemV9E8AYvgXohlETaTzDoV7oqE6VV26QK0rg19fcBxW+rOHVDc9RTDZn7Y/pC1XAwdlAiW+vBZCe3/cy5bQHra04T4x77jopJvss9ef/zCZ9EMCg2wK7dFHviXevRvkFQXbNDvczNsC3Gopev7mWPfwFXP4XwmqUSuDH07DwulfGs8QuSnV0oX8trKZi3Z8graLrLjqOmW12wnD2xltjlZDbGNFL9gvGv5h6ad3ptXSQ4QdafNOxthRAzFaK5TznUQECqD4IBO11Z/GrNwCVTxfnATaj3ILgj2mW5Sjo4qpdmwpCd5aNm10spd5jaPfstY2SVRs2VgMNX0fER4l9FpncyDi3Y8yC3jWKSEQ5Vjp7QIr5DB7SfJp8M3gKwb1EIja1P/6dCQXUXfxYjUUFpEscfJ9I4PCwoe7UGwD5jKufbk=
+  app: lebenslauf
