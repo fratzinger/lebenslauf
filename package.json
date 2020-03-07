@@ -9,7 +9,7 @@
   "scripts": {
     "install": "lerna bootstrap",
     "build": "cd packages/server && npm run build",
-    "heroku-postbuild": "lerna bootstrap",
+    "heroku-postbuild": "lerna bootstrap && npm run build",
     "test": "lerna run test",
     "start": "cd packages/server && node lib/index.js"
   },
