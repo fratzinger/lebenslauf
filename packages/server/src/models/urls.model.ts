@@ -13,7 +13,8 @@ export default function (app: Application): typeof Model {
       allowNull: false
     },
     type: DataTypes.STRING,
-    icon: DataTypes.STRING
+    icon: DataTypes.STRING,
+    description: DataTypes.STRING
   }, {
     hooks: {
       beforeCount(options: any): HookReturn {

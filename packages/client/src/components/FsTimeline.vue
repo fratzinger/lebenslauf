@@ -12,7 +12,7 @@
       </q-card-section>
       <q-separator></q-separator>
       <q-card-section>
-        <q-timeline color="primary" layout="comfortable">
+        <q-timeline color="primary" :layout="timelineLayout">
           <fs-job v-for="job in sortedJobs" :key="job.start.toString()" :job="job"></fs-job>
         </q-timeline>
       </q-card-section>
@@ -29,7 +29,7 @@
       </q-card-section>
       <q-separator></q-separator>
       <q-card-section>
-        <q-timeline color="primary" layout="comfortable" id="studiesTimeline">
+        <q-timeline color="primary" :layout="timelineLayout" id="studiesTimeline">
           <transition-group name="flip-list" tag="div">
             <fs-study v-for="study in sortedStudiums" :key="study.title" :study="study"></fs-study>
           </transition-group>
@@ -48,7 +48,7 @@
       </q-card-section>
       <q-separator></q-separator>
       <q-card-section>
-        <q-timeline color="primary" layout="comfortable">
+        <q-timeline color="primary" :layout="timelineLayout">
           <transition-group name="flip-list" tag="div">
             <fs-activity v-for="activity in sortedActivities" :activity="activity" :key="activity.title"></fs-activity>
           </transition-group>
@@ -121,6 +121,9 @@ export default {
     sortedActivities() {
       const order = (this.activitySortOrder > 0) ? "asc" : "desc";
       return _orderBy(this.activities, "end", order);
+    },
+    timelineLayout() {
+      return this.$q.screen.lt.sm ? "dense" : "comfortable";
     }
   },
   watch: {},
@@ -163,7 +166,7 @@ export default {
   transition: transform 1s;
 }
 
-@media (max-width: $breakpoint-md-max) {
+@media (max-width: $breakpoint-md-max) and (min-width: $breakpoint-sm-max) {
   .q-timeline__subtitle {
     text-align: center !important;
   }

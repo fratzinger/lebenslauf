@@ -14,16 +14,16 @@
               show-if-above
               bordered
               mini
-              content-class="bg-grey-1">
+              content-class="bg-grey-1 column justify-between">
       <q-list class="q-mb-xl">
         <essential-link v-for="link in personalUrls"
-          :key="link.title"
-          v-bind="link"/>
+                        :key="link.title"
+                        v-bind="link"/>
       </q-list>
       <q-list>
         <essential-link v-for="link in externalUrls"
-          :key="link.title"
-          v-bind="link"/>
+                        :key="link.title"
+                        v-bind="link"/>
       </q-list>
     </q-drawer>
     <q-page-container>

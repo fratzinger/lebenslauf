@@ -9,7 +9,7 @@
 
     <q-item-section>
       <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>{{ title }}</q-item-label>
+      <q-item-label caption>{{ description }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
@@ -22,18 +22,19 @@ export default {
       type: String,
       required: true
     },
-
     caption: {
       type: String,
       default: ""
     },
-
     link: {
       type: String,
       default: "#"
     },
-
     icon: {
+      type: String,
+      default: ""
+    },
+    description: {
       type: String,
       default: ""
     }
