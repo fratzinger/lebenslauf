@@ -6,7 +6,7 @@
   "cordovaId": "org.cordova.frs.app",
   "capacitorId": "",
   "author": "Frederik Schmatz",
-  "private": false,
+  "license": "MIT",
   "engines": {
     "node": ">= 10.18.1",
     "npm": ">= 6.13.4",

@@ -4,9 +4,7 @@ import auth from "@feathersjs/authentication-client";
 import io from "socket.io-client";
 import feathersVuex from "feathers-vuex";
 
-const host = (process.env.HOST) ? `${process.env.HOST}:${process.env.PORT ? ':' + process.env.PORT : ''}` : "http://localhost:3030";
-
-console.log(host, process.env);
+const host = (process.env.HOST) ? `${process.env.HOST}:${process.env.PORT ? ":" + process.env.PORT : ""}` : "http://localhost:3030";
 
 const socket = io(host, {
   transports: ["websocket"]

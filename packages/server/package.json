@@ -9,7 +9,7 @@
     "feathers"
   ],
   "author": "Frederik Schmatz",
-  "contributors": [],
+  "license": "MIT",
   "bugs": {},
   "directories": {
     "lib": "src",
