@@ -24,10 +24,4 @@ describe('Feathers application tests', () => {
   after(function(done) {
     server.close(done);
   });
-
-  it('starts and shows the index page', async () => {
-    const { data } = await axios.get(getUrl());
-
-    assert.ok(data.indexOf('<html lang="en">') !== -1);
-  });
 });

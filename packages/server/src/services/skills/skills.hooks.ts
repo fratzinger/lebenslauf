@@ -1,6 +1,7 @@
-import * as authentication from '@feathersjs/authentication';
+import * as authentication from "@feathersjs/authentication";
 // Don't remove this comment. It's needed to format import lines nicely.
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { authenticate } = authentication.hooks;
 
 export default {

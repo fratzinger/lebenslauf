@@ -24,13 +24,14 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "test": "npm run compile && npm run mocha",
     "dev": "ts-node-dev --no-notify src/ --init",
     "start": "npm run compile && node lib/",
     "build": "npm run compile",
     "restart": "npm run compile && node lib/ --init",
     "restart-fake": "npm run compile && node lib/ --init --fake",
+    "lint": "eslint -c .eslintrc.js --ext .ts src",
     "mocha": "ts-mocha \"test/**/*.ts\" --recursive --exit",
+    "test": "npm run compile && npm run mocha",
     "compile": "shx rm -rf lib/ && tsc"
   },
   "standard": {

@@ -1,11 +1,12 @@
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
-import { Sequelize, DataTypes } from 'sequelize';
-import { Application } from '../declarations';
+import { Sequelize, DataTypes, Model } from "sequelize";
+import { Application } from "../declarations";
+import { HookReturn } from "sequelize/types/lib/hooks";
 
-export default function (app: Application) {
-  const sequelizeClient: Sequelize = app.get('sequelizeClient');
-  const urls = sequelizeClient.define('urls', {
+export default function (app: Application): typeof Model {
+  const sequelizeClient: Sequelize = app.get("sequelizeClient");
+  const urls = sequelizeClient.define("urls", {
     title: DataTypes.STRING,
     link: {
       type: DataTypes.STRING,
@@ -15,14 +16,14 @@ export default function (app: Application) {
     icon: DataTypes.STRING
   }, {
     hooks: {
-      beforeCount(options: any) {
+      beforeCount(options: any): HookReturn {
         options.raw = true;
       }
     }
   });
 
-  // eslint-disable-next-line no-unused-vars
-  (urls as any).associate = function (models: any) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  (urls as any).associate = function (models: any): void {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };

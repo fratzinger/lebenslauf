@@ -1,12 +1,11 @@
 import { argv } from "yargs";
-import { Application, ServiceTypes } from '../declarations';
-import { ServiceAddons } from '@feathersjs/feathers';
+import { Application } from "../declarations";
 import logger from "../logger";
 
 import asArray from "./services";
 import { Service } from "feathers-sequelize/types";
 
-export default async (app:  Application) => {
+export default async (app:  Application): Promise<void> => {
   if (argv.init !== true) { return; }
 
   logger.info("init started");
@@ -18,11 +17,11 @@ export default async (app:  Application) => {
 
     try {
 
-    if (!data.service || !app.service(data.service)) {
-      throw "service not found";
-    }
-    if (!isFake && !data.isFake) continue;
-    if (!Array.isArray(data.entries)) continue;
+      if (!data.service || !app.service(data.service)) {
+        throw "service not found";
+      }
+      if (!isFake && !data.isFake) continue;
+      if (!Array.isArray(data.entries)) continue;
 
 
       await (app.service(data.service) as Service).create(data.entries);
@@ -34,4 +33,4 @@ export default async (app:  Application) => {
   }
 
   logger.info("init finished");
-}
+};

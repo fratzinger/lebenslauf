@@ -1,14 +1,15 @@
-import { Sequelize } from 'sequelize';
-import { Application } from './declarations';
+import { Sequelize } from "sequelize";
+import { Application, ServiceTypes } from "./declarations";
+import feathersExpress = require("@feathersjs/express");
 
-const { argv } = require("yargs");
+import { argv } from "yargs";
 
-let isForce = (argv.init === true);
+const isForce = (argv.init === true);
 
-export default function (app: Application) {
+export default function (app: Application): void {
   const connectionString = app.get("postgres");
   const sequelize = new Sequelize(connectionString, {
-    dialect: 'postgres',
+    dialect: "postgres",
     logging: false,
     define: {
       freezeTableName: true
@@ -16,15 +17,15 @@ export default function (app: Application) {
   });
   const oldSetup = app.setup;
 
-  app.set('sequelizeClient', sequelize);
+  app.set("sequelizeClient", sequelize);
 
-  app.setup = function (...args) {
+  app.setup = function (...args): feathersExpress.Application<ServiceTypes> {
     const result = oldSetup.apply(this, args);
 
     // Set up data relationships
-    const models = sequelize.models;
+    const {models} = sequelize;
     Object.keys(models).forEach(name => {
-      if ('associate' in models[name]) {
+      if ("associate" in models[name]) {
         (models[name] as any).associate(models);
       }
     });

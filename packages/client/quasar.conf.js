@@ -41,9 +41,12 @@ module.exports = function(ctx) {
     build: {
       scopeHoisting: true,
       vueRouterMode: "hash", // available values: 'hash', 'history'
-      showProgress: true,
+      showProgress: false,
       gzip: false,
-      analyze: true,
+      analyze: {
+        analyzerMode: "static"
+      },
+      distDir: process.env.NODE_ENV === "production" ? `../server/public` : `dist/${ctx.modeName}`,
 
       transpileDependencies: ["feathers-vuex"],
 

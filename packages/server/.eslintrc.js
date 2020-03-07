@@ -1,22 +1,16 @@
 module.exports = {
-  "env": {
-    "es6": true,
-    "node": true,
-    "mocha": true
-  },
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "security"
-  ],
+  "plugins": ["@typescript-eslint"],
   "extends": [
-    "eslint:recommended",
-    "plugin:security/recommended"
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-interface": "off",
     "quotes": ["warn", "double", "avoid-escape"],
     "indent": ["warn", 2, {
       "SwitchCase": 1,
@@ -31,7 +25,6 @@ module.exports = {
       "flatTernaryExpressions": true
     }],
     "semi": ["warn", "always"],
-    "no-unused-vars": "warn",
     "no-console": "off",
     "camelcase": "warn",
     "require-atomic-updates": "off",
