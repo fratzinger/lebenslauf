@@ -2,26 +2,7 @@
   "host": "https://lebenslauf.herokuapp.com",
   "port": "PORT",
   "authentication": {
-    "entity": "user",
-    "service": "users",
-    "secret": "DqPOmrkJdQVTq00CQVFzeASyEL8=",
-    "authStrategies": [
-      "jwt",
-      "local"
-    ],
-    "jwtOptions": {
-      "header": {
-        "typ": "access"
-      },
-      "audience": "https://yourdomain.com",
-      "issuer": "feathers",
-      "algorithm": "HS256",
-      "expiresIn": "30d"
-    },
-    "local": {
-      "usernameField": "email",
-      "passwordField": "password"
-    }
+    "secret": "DqPOmrkJdQVTq00CQVFzeASyEL8="
   },
   "postgres": "DATABASE_URL"
 }
