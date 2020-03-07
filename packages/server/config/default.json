@@ -28,11 +28,5 @@
       "passwordField": "password"
     }
   },
-  "postgres": {
-    "user": "postgres",
-    "password": "1",
-    "host": "localhost",
-    "port": 5432,
-    "database": "lebenslauf"
-  }
+  "postgres": "postgres://postgres:1@localhost:5432/lebenslauf"
 }

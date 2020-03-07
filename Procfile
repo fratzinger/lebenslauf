@@ -1,1 +1,1 @@
-web: NODE_ENV=production&& cd packages/server && node lib/index.js
+web: cd packages/server && node lib/index.js

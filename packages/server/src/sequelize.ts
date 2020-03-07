@@ -6,8 +6,7 @@ const { argv } = require("yargs");
 let isForce = (argv.init === true);
 
 export default function (app: Application) {
-  const c = app.get("postgres");
-  const connectionString = `postgres://${c.user}:${c.password}@${c.host}:${c.port}/${c.database}`;
+  const connectionString = app.get("postgres");
   const sequelize = new Sequelize(connectionString, {
     dialect: 'postgres',
     logging: false,
