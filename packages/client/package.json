@@ -1,5 +1,5 @@
 {
-  "name": "frederik-schmatz-lebenslauf",
+  "name": "lebenslauf-client",
   "version": "0.0.1",
   "description": "Lebenslauf",
   "productName": "Frederik Schmatz App",
@@ -12,6 +12,7 @@
     "build": "quasar build",
     "build:pwa": "quasar build -m pwa",
     "lint": "eslint --ext .js,.vue src",
+    "test": "npm run test:unit",
     "test:unit": "jest --updateSnapshot",
     "test:unit:coverage": "jest --coverage",
     "test:unit:watch": "jest --watch",
