@@ -50,6 +50,11 @@ module.exports = function(ctx) {
 
       transpileDependencies: ["feathers-vuex"],
 
+      env: {
+        HOST: JSON.stringify(process.env.HOST),
+        PORT: JSON.stringify(process.env.PORT)
+      },
+
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack(cfg, { isServer, isClient }) {
         cfg.module.rules.push({
