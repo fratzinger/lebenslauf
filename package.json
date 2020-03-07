@@ -1,7 +1,8 @@
 {
   "name": "lebenslauf",
-  "version": "1.0.0",
+  "private": true,
   "description": "",
+  "homepage": "https://f-schmatz.de",
   "engines": {
     "node": "^12.0.0",
     "npm": ">= 6.0.0"
@@ -19,11 +20,9 @@
     "type": "git",
     "url": "git+https://github.com/fratzinger/lebenslauf.git"
   },
-  
   "bugs": {
     "url": "https://github.com/fratzinger/lebenslauf/issues"
   },
-  "homepage": "https://github.com/fratzinger/lebenslauf#readme",
   "devDependencies": {
     "lerna": "^3.20.2",
     "nyc": "^15.0.0"
