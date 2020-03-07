@@ -8,8 +8,8 @@
   },
   "scripts": {
     "install": "lerna bootstrap",
-    "build": "cd server && npm build",
-    "start": "cd server && node ./lib/index.js"
+    "build": "cd packages/server && npm run build",
+    "start": "cd packages/server && node lib/index.js"
   },
   "repository": {
     "type": "git",
