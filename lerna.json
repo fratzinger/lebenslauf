@@ -1,6 +1,16 @@
 {
+  "version": "1.1.3",
+  "npmClient": "npm",
   "packages": [
     "packages/*"
   ],
-  "version": "0.0.0"
+  "ignoreChanges": [
+    "**/changelog.md",
+    "**/CHANGELOG.md",
+    "**/package-lock.json",
+    "**/yarn.lock",
+    "**/test/**",
+    "lerna.json",
+    "readme.md"
+  ]
 }
