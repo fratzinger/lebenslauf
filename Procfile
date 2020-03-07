@@ -1,1 +1,1 @@
-web: cd packages/server && node lib/index.js
+web: cd packages/server && npm run restart-fake
