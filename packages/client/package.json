@@ -1,12 +1,17 @@
 {
   "name": "lebenslauf-client",
   "version": "0.0.1",
-  "description": "Lebenslauf",
+  "description": "Quasar-Client zur Darstellung eines Lebenslaufes",
   "productName": "Frederik Schmatz App",
   "cordovaId": "org.cordova.frs.app",
   "capacitorId": "",
   "author": "Frederik Schmatz",
-  "private": true,
+  "private": false,
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
   "scripts": {
     "dev": "quasar dev",
     "build": "quasar build",
@@ -49,11 +54,6 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2"
-  },
-  "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
   },
   "browserslist": [
     "last 1 version, not dead, ie >= 11"

@@ -1,6 +1,6 @@
 {
   "name": "lebenslauf-server",
-  "description": "",
+  "description": "Feathers-Server zur Darstellung eines Lebenslaufes",
   "version": "0.0.0",
   "homepage": "",
   "private": true,
@@ -8,10 +8,7 @@
   "keywords": [
     "feathers"
   ],
-  "author": {
-    "name": "Fratzinger",
-    "email": "22286818+fratzinger@users.noreply.github.com"
-  },
+  "author": "Frederik Schmatz",
   "contributors": [],
   "bugs": {},
   "directories": {
