@@ -31,7 +31,7 @@
     "restart": "npm run compile && node lib/ --init",
     "restart-fake": "npm run compile && node lib/ --init --fake",
     "mocha": "ts-mocha \"test/**/*.ts\" --recursive --exit",
-    "compile": "rm -rf lib/ && tsc"
+    "compile": "shx rm -rf lib/ && tsc"
   },
   "standard": {
     "env": [
