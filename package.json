@@ -4,10 +4,10 @@
   "description": "",
   "engines": {
     "node": "^12.0.0",
-    "npm": ">= 3.0.0"
+    "npm": ">= 6.0.0"
   },
   "scripts": {
-    "postinstall": "cd server && npm i",
+    "postinstall": "cd server rf&& rm - node_modules && npm i",
     "build": "cd server && npm build",
     "start": "cd server && npm start"
   },
