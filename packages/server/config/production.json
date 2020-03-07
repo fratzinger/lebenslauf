@@ -1,8 +1,8 @@
 {
-  "host": "https://lebenslauf.herokuapp.com",
+  "host": "HOST",
   "port": "PORT",
   "authentication": {
-    "secret": "DqPOmrkJdQVTq00CQVFzeASyEL8="
+    "secret": "AUTH_SECRET"
   },
   "postgres": "DATABASE_URL"
 }
