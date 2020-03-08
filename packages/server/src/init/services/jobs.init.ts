@@ -6,8 +6,8 @@ export default {
       title: "Wiss. Mitarbeiter",
       institution: "Fraunhofer IGP Rostock",
       url: "https://igp.fraunhofer.de",
-      start: new Date(2017, 12),
-      end: null,
+      startAt: new Date(2017, 12),
+      endAt: null,
       icon: "fas fa-briefcase"
     }
   ]

@@ -10,7 +10,8 @@ export default function (app: Application): typeof Model {
     name: DataTypes.STRING,
     volume: DataTypes.STRING,
     pages: DataTypes.STRING,
-    url: DataTypes.STRING
+    url: DataTypes.STRING,
+    publishedAt: DataTypes.DATE
   }, {
     hooks: {
       beforeCount(options: any): HookReturn {

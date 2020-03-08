@@ -1,11 +1,12 @@
-import activities from "./activities";
-import characteristics from "./characteristics";
-import jobs from "./jobs";
-import journals from "./journals";
-import publications from "./publications";
-import studies from "./studies";
-import urls from "./urls";
-import users from "./users";
+import activities from "./activities.init";
+import characteristics from "./characteristics.init";
+import jobs from "./jobs.init";
+import journals from "./journals.init";
+import publications from "./publications.init";
+import skills from "./skills.init";
+import studies from "./studies.init";
+import urls from "./urls.init";
+import users from "./users.init";
 
 const asObject = {
   activities,
@@ -13,6 +14,7 @@ const asObject = {
   jobs,
   journals,
   publications,
+  skills,
   studies,
   urls,
   users,
@@ -26,6 +28,7 @@ export {
   jobs,
   journals,
   publications,
+  skills,
   studies,
   urls,
   users,

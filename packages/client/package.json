@@ -30,6 +30,7 @@
   "dependencies": {
     "@feathersjs/authentication-client": "^4.5.1",
     "@feathersjs/feathers": "^4.5.1",
+    "@feathersjs/schema": "0.0.1-alpha.4",
     "@feathersjs/socketio-client": "^4.5.1",
     "@quasar/extras": "^1.5.1",
     "@vue/composition-api": "^0.4.0",

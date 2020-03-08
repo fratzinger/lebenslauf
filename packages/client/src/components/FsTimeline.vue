@@ -13,7 +13,7 @@
       <q-separator></q-separator>
       <q-card-section>
         <q-timeline color="primary" :layout="timelineLayout">
-          <fs-job v-for="job in sortedJobs" :key="job.start.toString()" :job="job"></fs-job>
+          <fs-job v-for="job in sortedJobs" :key="job.startAt.toString()" :job="job"></fs-job>
         </q-timeline>
       </q-card-section>
     </q-card>
@@ -112,7 +112,7 @@ export default {
     },
     sortedJobs() {
       const order = (this.jobSortOrder > 0) ? "asc" : "desc";
-      return _orderBy(this.jobs, "start", order);
+      return _orderBy(this.jobs, "startAt", order);
     },
     sortedStudiums() {
       const order = (this.studySortOrder > 0) ? "asc" : "desc";

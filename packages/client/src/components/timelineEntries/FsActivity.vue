@@ -2,7 +2,7 @@
   <q-timeline-entry :icon="activity.icon">
     <template v-slot:title>{{ activity.title }}</template>
     <template v-slot:subtitle>
-      {{ date.format(activity.start, "MM/yyyy") }} - {{ date.format(activity.end, "MM/yyyy") }}
+      {{ date.format(activity.startAt, "MM/yyyy") }} - {{ date.format(activity.endAt, "MM/yyyy") }}
     </template>
     <div class="text-bold">{{ activity.establishment }}</div>
     <div v-if="activity.descriptions && Array.isArray(activity.descriptions) && activity.descriptions.length > 0" class="description-border-left">

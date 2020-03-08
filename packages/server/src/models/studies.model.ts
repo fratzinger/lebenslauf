@@ -12,8 +12,8 @@ export default function (app: Application): typeof Model {
     grade: DataTypes.STRING,
     establishment: DataTypes.STRING,
     icon: DataTypes.STRING,
-    start: DataTypes.DATE,
-    end: DataTypes.DATE,
+    startAt: DataTypes.DATE,
+    endAt: DataTypes.DATE,
     theses: DataTypes.JSONB
   }, {
     hooks: {

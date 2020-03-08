@@ -9,8 +9,8 @@ export default {
       grade: "1.7",
       establishment: "Katholisches Schulzentrum Bernhardinum in Fürstenwalde (Brandenburg)",
       icon: "fas fa-school",
-      start: new Date(1999),
-      end: new Date(2011)
+      startAt: new Date(1999),
+      endAt: new Date(2011)
     },
     {
       title: "eBusiness",
@@ -19,8 +19,8 @@ export default {
       grade: "ohne Abschluss",
       establishment: "BTU Cottbus",
       icon: "fas fa-wifi",
-      start: new Date(2011, 10),
-      end: new Date(2012, 9)
+      startAt: new Date(2011, 10),
+      endAt: new Date(2012, 9)
     },
     {
       title: "Wirt.-Ing., Vertiefung Maschinenbau",
@@ -29,8 +29,8 @@ export default {
       grade: "2.1",
       establishment: "Universität Rostock",
       icon: "fas fa-cog",
-      start: new Date(2012, 10),
-      end: new Date(2015, 9),
+      startAt: new Date(2012, 10),
+      endAt: new Date(2015, 9),
       theses: [
         {
           type: "Bachelorarbeit",
@@ -47,8 +47,8 @@ export default {
       grade: "1.7",
       establishment: "Universität Rostock",
       icon: "fas fa-cogs",
-      start: new Date(2015, 10),
-      end: new Date(2017, 10),
+      startAt: new Date(2015, 10),
+      endAt: new Date(2017, 10),
       theses: [
         {
           type: "Studienarbeit",

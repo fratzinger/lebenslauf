@@ -6,8 +6,8 @@ export default {
       title: "Hanseatic Efficiency",
       establishment: "Universität Rostock",
       icon: "fas fa-car",
-      start: new Date(2013, 10),
-      end: new Date(2014, 9),
+      startAt: new Date(2013, 10),
+      endAt: new Date(2014, 9),
       descriptions: [
         'Teilnahme als Team beim Shell Eco Marathon 2014 in Rotterdam in der Klasse "Benzin" (11. Platz - 743km Reichweite mit 1l Benzin)',
         "Programmierung verschiedener Sensoren zur Telemetrie des Fahrzeugs"
@@ -27,8 +27,8 @@ export default {
       title: "Praktikum",
       establishment: "Fraunhofer IGP Rostock",
       icon: "fas fa-laptop-code",
-      start: new Date(2014, 8),
-      end: new Date(2014, 10),
+      startAt: new Date(2014, 8),
+      endAt: new Date(2014, 10),
       descriptions: [
         "Programmierung einer C#/WinForms-Anwendung und Microsoft Access Datenbank zur Visualisierung und Verwaltung einer Lagerflächenbelegung mit Rohren von Offshore-Windkraftanlagen"
       ],
@@ -46,8 +46,8 @@ export default {
       title: "Studentische Hilfskraft",
       establishment: "Fraunhofer IGP Rostock",
       icon: "fas fa-laptop-code",
-      start: new Date(2014, 10),
-      end: new Date(2017, 11),
+      startAt: new Date(2014, 10),
+      endAt: new Date(2017, 11),
       descriptions: [
         "Programmierung einer C# Anwendung zur Anbindung an Texnomatix RobotExpert (Roboter-Offlineprogrammierung), mit dem das komplexe Programm sehr intuitiv für das Vorbohren von gegossenen Schiffspropellern durch den am Fraunhofer IGP entwickelten Großroboter",
         "Programmierung eines Cobots (Universal Robots UR10) mit PolyScope, URScript, Socket-Verbindung",
@@ -74,8 +74,8 @@ export default {
       title: "IT-Vorstand",
       establishment: "VWI Hochschulgruppe Rostock e.V.",
       icon: "fab fa-wordpress",
-      start: new Date(2016, 4),
-      end: new Date(2017, 5),
+      startAt: new Date(2016, 4),
+      endAt: new Date(2017, 5),
       descriptions: [
         "Erstellung und administrative sowie inhaltliche Verwaltung einer Internetpräsenz zur Außendarstellung der universitätsnahen Hochschulgruppe des Verein der Wirtschaftsingenieure (Wordpress, Themes, Plugins, HTML, CSS, PHP)",
         "Vefassen und Vertrieb von monatlichen Newslettern",

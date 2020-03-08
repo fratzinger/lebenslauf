@@ -3,7 +3,7 @@
       "**/node_modules": true,
       "**/dist": true,
       "**/src-cordova": true,
-      "package_lock.json": true
+      "package-lock.json": true
     },
     "workbench.colorCustomizations": {
       "activityBar.background": "#000000",

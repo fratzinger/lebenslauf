@@ -8,8 +8,8 @@ export default function (app: Application): typeof Model {
   const sequelizeClient: Sequelize = app.get("sequelizeClient");
   const jobs = sequelizeClient.define("jobs", {
     title: DataTypes.STRING,
-    start: DataTypes.DATE,
-    end: DataTypes.DATE,
+    startAt: DataTypes.DATE,
+    endAt: DataTypes.DATE,
     icon: DataTypes.STRING
   }, {
     hooks: {

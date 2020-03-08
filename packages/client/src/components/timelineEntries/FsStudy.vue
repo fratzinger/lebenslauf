@@ -2,7 +2,7 @@
   <q-timeline-entry :icon="study.icon">
     <template v-slot:title>{{ study.graduation }} {{ study.title }}</template>
     <template
-      v-slot:subtitle>{{ date.format(study.start, "MM/yyyy") }} - {{ date.format(study.end, "MM/yyyy") }}</template>
+      v-slot:subtitle>{{ date.format(study.startAt, "MM/yyyy") }} - {{ date.format(study.endAt, "MM/yyyy") }}</template>
     <div>
       <q-chip color="primary"
               text-color="white"

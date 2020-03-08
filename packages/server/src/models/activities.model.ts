@@ -10,8 +10,8 @@ export default function (app: Application): typeof Model {
     title: DataTypes.STRING,
     establishment: DataTypes.STRING,
     icon: DataTypes.STRING,
-    start: DataTypes.DATE,
-    end: DataTypes.DATE,
+    startAt: DataTypes.DATE,
+    endAt: DataTypes.DATE,
     descriptions: DataTypes.JSONB,
     skills: DataTypes.JSONB
   }, {

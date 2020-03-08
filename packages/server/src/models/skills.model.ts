@@ -12,7 +12,12 @@ export default function (app: Application): typeof Model {
       allowNull: false,
       unique: true
     },
-    value: DataTypes.FLOAT
+    value: DataTypes.FLOAT,
+    type: DataTypes.STRING,
+    logo: DataTypes.STRING,
+    url: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    learnedAt: DataTypes.DATE
   }, {
     hooks: {
       beforeCount(options: any): HookReturn {

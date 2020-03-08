@@ -14,7 +14,8 @@ export default function (app: Application): typeof Model {
     },
     type: DataTypes.STRING,
     icon: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.STRING,
+
   }, {
     hooks: {
       beforeCount(options: any): HookReturn {
