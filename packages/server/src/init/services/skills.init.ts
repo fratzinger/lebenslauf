@@ -228,7 +228,7 @@ export default {
       url: "https://index.ros.org/doc/ros2/",
       description: "Robot Operating System (ROS) is robotics middleware. Although ROS is not an operating system, it provides services designed for a heterogeneous computer cluster such as hardware abstraction, low-level device control, implementation of commonly used functionality, message-passing between processes, and package management.",
       learnedAt: new Date(2019)
-    },
+    }
   ]
 };
 
