@@ -1,5 +1,8 @@
 import { BaseModel } from "../client";
 
+import { formatDistanceStrict } from "date-fns";
+import { de } from "date-fns/locale";
+
 const props = {
   createdAt: {
     type: Date,
@@ -40,6 +43,10 @@ const props = {
   learnedAt: {
     type: Date,
     default: null
+  },
+  color: {
+    type: String,
+    default: null
   }
 };
 
@@ -78,5 +85,9 @@ export default class Skill extends BaseModel {
 
   get linearValue() {
     return this.value / 100;
+  }
+
+  get since() {
+    return formatDistanceStrict(this.learnedAt, new Date(), { locale: de });
   }
 }

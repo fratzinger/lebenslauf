@@ -17,7 +17,8 @@ export default function (app: Application): typeof Model {
     logo: DataTypes.STRING,
     url: DataTypes.STRING,
     description: DataTypes.TEXT,
-    learnedAt: DataTypes.DATE
+    learnedAt: DataTypes.DATE,
+    color: DataTypes.STRING
   }, {
     hooks: {
       beforeCount(options: any): HookReturn {

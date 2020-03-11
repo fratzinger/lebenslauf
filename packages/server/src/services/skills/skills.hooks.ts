@@ -9,11 +9,7 @@ const { authenticate } = authentication.hooks;
 export default {
   before: {
     all: [ /* authenticate('jwt') */ ],
-    find: [
-      (context: HookContext): void => {
-        console.log(context);
-      }
-    ],
+    find: [],
     get: [],
     create: [],
     update: [],
