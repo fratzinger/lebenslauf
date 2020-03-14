@@ -1,5 +1,13 @@
 {
-  "plugins": ["@babel/plugin-syntax-dynamic-import"],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "prismjs", {
+        "languages": ["javascript", "css", "html", "csharp"],
+        "plugins": ["line-numbers"],
+        "css": true
+      }]
+  ],
   "env": {
     "test": {
       "plugins": ["dynamic-import-node"],

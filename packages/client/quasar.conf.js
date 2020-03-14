@@ -21,9 +21,15 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       iconSet: "material-icons", // Quasar icon set
-      lang: "en-us", // Quasar language pack
+      lang: "de", // Quasar language pack
 
       all: "auto",
+
+      config: {
+        screen: {
+          bodyClasses: true // <<< add this
+        }
+      },
 
       components: [],
       directives: [],
@@ -46,7 +52,7 @@ module.exports = function(ctx) {
       analyze: {
         analyzerMode: "static"
       },
-      distDir: process.env.NODE_ENV === "production" ? `../server/public` : `dist/${ctx.modeName}`,
+      distDir: process.env.NODE_ENV === "production" ? "../server/public" : `dist/${ctx.modeName}`,
 
       transpileDependencies: ["feathers-vuex"],
 

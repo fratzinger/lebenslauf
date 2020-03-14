@@ -1,13 +1,20 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
-        <q-btn flat
+      <q-toolbar class="justify-between">
+        <div>
+          <q-btn flat
                dense
                round
                @click="leftDrawerOpen = !leftDrawerOpen"
                icon="menu"
                aria-label="Menu"/>
+        </div>
+        <div>
+          <q-btn flat>
+            Github<external-link-icon />
+          </q-btn>
+        </div>
       </q-toolbar>
     </q-header>
     <q-drawer v-model="leftDrawerOpen"
@@ -15,7 +22,7 @@
               bordered
               mini
               content-class="bg-grey-1 column justify-between">
-      <q-list class="q-mb-xl">
+      <q-list>
         <essential-link v-for="link in personalUrls"
                         :key="link.title"
                         v-bind="link"/>
@@ -33,15 +40,18 @@
 </template>
 
 <script>
-import EssentialLink from "components/EssentialLink";
 import { makeFindMixin } from "feathers-vuex";
 
 import { mapGetters } from "vuex";
 
+import EssentialLink from "components/EssentialLink";
+import ExternalLinkIcon from "components/ExternalLinkIcon";
+
 export default {
   name: "MainLayout",
   components: {
-    EssentialLink
+    EssentialLink,
+    ExternalLinkIcon
   },
   mixins: [makeFindMixin({ service: "urls" })],
   data() {
