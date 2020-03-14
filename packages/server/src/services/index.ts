@@ -8,6 +8,7 @@ import skills from "./skills/skills.service";
 import characteristics from "./characteristics/characteristics.service";
 import jobs from "./jobs/jobs.service";
 import urls from "./urls/urls.service";
+import uploads from "./uploads/uploads.service";
 // Don't remove this comment. It's needed to format import lines nicely.
 
 export default function (app: Application): void {
@@ -20,4 +21,5 @@ export default function (app: Application): void {
   app.configure(characteristics);
   app.configure(jobs);
   app.configure(urls);
+  app.configure(uploads);
 }

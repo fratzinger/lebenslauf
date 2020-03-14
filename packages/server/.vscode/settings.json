@@ -3,7 +3,7 @@
     "**/node_modules": true,
     "**/public": true,
     "**/lib": true,
-    "**/package_lock.json"
+    "**/package-lock.json"
   },
   "workbench.colorCustomizations": {
     "activityBar.background": "#1f82c0",
