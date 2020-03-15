@@ -16,7 +16,7 @@ const servicePlugin = makeServicePlugin({
   },
   getters: {
     profilePic(state, getters) {
-      const result = `${state.host}/${state.folder}/1584181587129-photo1-1.jpg`;
+      const result = `${state.host}/${state.folder}/profilePic.jpg`;
       return result;
     }
   }
