@@ -10,8 +10,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .q-btn {
   text-transform: none !important;
+}
+
+.circle {
+  border-radius: 50% !important;
 }
 </style>

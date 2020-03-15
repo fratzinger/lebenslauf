@@ -27,7 +27,7 @@ module.exports = function(ctx) {
 
       config: {
         screen: {
-          bodyClasses: true // <<< add this
+          bodyClasses: true
         }
       },
 
@@ -36,7 +36,8 @@ module.exports = function(ctx) {
 
       // Quasar plugins
       plugins: [
-        "Notify"
+        "Notify",
+        "Scroll"
       ]
     },
 
