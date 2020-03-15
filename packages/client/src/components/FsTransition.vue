@@ -44,6 +44,10 @@ export default {
     isAbsolute: {
       type: Boolean,
       default: false
+    },
+    ms: {
+      type: Number,
+      default: 500
     }
   },
   data() {
@@ -60,10 +64,13 @@ export default {
       return this.nameLeave || this.name;
     },
     leaveActiveClass() {
-      return `transition-leave-active${this.isAbsolute ? " is-absolute" : ""}`;
+      return `transition-${this.ms}-leave-active${this.isAbsolute ? " is-absolute" : ""}`;
     },
     enterActiveClass() {
-      return `transition-enter-active${this.isAbsolute ? " is-absolute" : ""}`;
+      return `transition-${this.ms}-enter-active${this.isAbsolute ? " is-absolute" : ""}`;
+    },
+    time() {
+      return { transition: `${this.ms / 1000}s ease` };
     }
   },
   methods: {
@@ -78,6 +85,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@for $i from 1 through 20 {
+  .transition-#{$i*100}-enter-active,
+  .transition-#{$i*100}-leave-active {
+    transition: #{$i / 10}s ease;
+  }
+}
+
 .transition-enter-active,
 .transition-leave-active {
   transition: 0.5s ease;
