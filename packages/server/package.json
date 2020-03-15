@@ -27,8 +27,10 @@
     "restart": "npm run compile && node lib/ --init",
     "restart-fake": "npm run compile && node lib/ --init --fake",
     "lint": "eslint -c .eslintrc.js --ext .ts src",
-    "mocha": "ts-mocha \"test/**/*.ts\" --recursive --exit",
-    "test": "npm run compile && npm run mocha",
+    "test": "npm run compile && npm run coverage",
+    "coverage": "nyc npm run mocha",
+    "mocha": "npm run clean && cross-env NODE_ENV=test ts-mocha \"test/**/*.ts\" --recursive --exit",
+    "clean": "shx rm -rf test/data/",
     "compile": "shx rm -rf lib/ && tsc"
   },
   "standard": {
@@ -63,6 +65,7 @@
     "yargs": "^15.3.0"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/bluebird": "^3.5.30",
     "@types/chai": "^4.2.11",
     "@types/compression": "^1.7.0",
@@ -79,10 +82,12 @@
     "@typescript-eslint/parser": "^2.23.0",
     "axios": "^0.19.2",
     "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-plugin-security": "^1.4.0",
     "mocha": "^6.2.2",
     "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
     "shx": "^0.3.2",
     "ts-mocha": "^6.0.0",
     "ts-node-dev": "^1.0.0-pre.44",
