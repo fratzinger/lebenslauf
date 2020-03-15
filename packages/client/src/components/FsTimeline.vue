@@ -1,60 +1,43 @@
 <template>
   <div id="cv">
-    <q-card>
-      <q-card-section class="flex justify-between">
-        <div class="text-h5">
-          <q-avatar color="primary" text-color="white" icon="fas fa-briefcase" /> Beruflicher Werdegang
-        </div>
+    <fs-card title="Beruflicher Werdegang" icon="fas fa-briefcase">
+      <template v-slot:header-right>
         <q-btn v-if="jobSortOrder > 0"
-               color="primary"
-               :label="jobSortOrder > 0 ? 'aufsteigend' : 'absteigend'"
-               @click="jobSortOrder *= -1"></q-btn>
-      </q-card-section>
-      <q-separator></q-separator>
-      <q-card-section>
-        <q-timeline color="primary" :layout="timelineLayout">
-          <fs-job v-for="job in sortedJobs" :key="job.startAt.toString()" :job="job"></fs-job>
-        </q-timeline>
-      </q-card-section>
-    </q-card>
-    <q-card>
-      <q-card-section class="flex justify-between">
-        <div class="text-h5">
-          <q-avatar color="primary" text-color="white" icon="fas fa-graduation-cap" /> Ausbildung
-        </div>
-        <q-btn v-if="studySortOrder > 0"
+              v-slot:header-right
+              color="primary"
+              :label="jobSortOrder > 0 ? 'aufsteigend' : 'absteigend'"
+              @click="jobSortOrder *= -1"></q-btn>
+      </template>
+      <q-timeline color="primary" :layout="timelineLayout">
+        <fs-job v-for="job in sortedJobs" :key="job.startAt.toString()" :job="job"></fs-job>
+      </q-timeline>
+    </fs-card>
+    <fs-card title="Ausbildung" icon="fas fa-graduation-cap">
+      <template v-slot:header-right>
+                <q-btn v-if="studySortOrder > 0"
                color="primary"
                :label="studySortOrder > 0 ? 'aufsteigend' : 'absteigend'"
                @click="studySortOrder *= -1"></q-btn>
-      </q-card-section>
-      <q-separator></q-separator>
-      <q-card-section>
-        <q-timeline color="primary" :layout="timelineLayout" id="studiesTimeline">
+      </template>
+      <q-timeline color="primary" :layout="timelineLayout" id="studiesTimeline">
           <transition-group name="flip-list" tag="div">
             <fs-study v-for="study in sortedStudiums" :key="study.title" :study="study"></fs-study>
           </transition-group>
         </q-timeline>
-      </q-card-section>
-    </q-card>
-    <q-card>
-      <q-card-section class="flex justify-between">
-        <div class="text-h5">
-          <q-avatar color="primary" text-color="white" icon="fas fa-project-diagram" /> Außeruniversitäre Aktivitäten
-        </div>
+    </fs-card>
+    <fs-card title="Außeruniversitäre Aktivitäten" icon="fas fa-project-diagram">
+      <template v-slot:header-right>
         <q-btn v-if="activitySortOrder > 0"
                color="primary"
                :label="activitySortOrder > 0 ? 'aufsteigend' : 'absteigend'"
                @click="activitySortOrder *= -1"></q-btn>
-      </q-card-section>
-      <q-separator></q-separator>
-      <q-card-section>
-        <q-timeline color="primary" :layout="timelineLayout">
+      </template>
+      <q-timeline color="primary" :layout="timelineLayout">
           <transition-group name="flip-list" tag="div">
             <fs-activity v-for="activity in sortedActivities" :activity="activity" :key="activity.title"></fs-activity>
           </transition-group>
         </q-timeline>
-      </q-card-section>
-    </q-card>
+    </fs-card>
   </div>
 </template>
 
@@ -70,13 +53,15 @@ import { makeFindMixin } from "feathers-vuex";
 import FsActivity from "@/components/timelineEntries/FsActivity";
 import FsStudy from "@/components/timelineEntries/FsStudy";
 import FsJob from "@/components/timelineEntries/FsJob";
+import FsCard from "@/components/FsCard";
 
 export default {
   name: "FsTimeline",
   components: {
     FsActivity,
     FsStudy,
-    FsJob
+    FsJob,
+    FsCard
   },
   props: {},
   mixins: [

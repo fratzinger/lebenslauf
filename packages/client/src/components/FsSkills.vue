@@ -1,7 +1,6 @@
 <template>
-  <q-card>
-    <q-card-section class="row justify-between">
-      <div class="text-h6">Skills</div>
+  <fs-card title="Fähigkeiten" icon="fas fa-laptop-code">
+    <template v-slot:header-right>
       <div>
         <q-toggle v-model="isGrouped"
                   label="gruppieren"
@@ -25,9 +24,7 @@
           </q-list>
         </q-btn-dropdown>
       </div>
-
-    </q-card-section>
-    <q-separator />
+    </template>
     <div v-for="(skills, cat) in skillsByCategory" :key="cat">
       <q-card-section class="q-p-sm">
         <div v-if="isGrouped" class="text-h6 q-mb-md">
@@ -45,13 +42,15 @@
       </q-card-section>
       <q-separator />
     </div>
-  </q-card>
+  </fs-card>
 </template>
 
 <script>
 // import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
 
 import { makeFindMixin } from "feathers-vuex";
+
+import FsCard from "components/FsCard";
 
 import {
   orderBy as _orderBy,
@@ -60,8 +59,12 @@ import {
 
 export default {
   name: "FsSkills",
-  components: {},
-  mixins: [makeFindMixin({ service: "skills" })],
+  components: {
+    FsCard
+  },
+  mixins: [
+    makeFindMixin({ service: "skills" })
+  ],
   props: {},
   data() {
     return {

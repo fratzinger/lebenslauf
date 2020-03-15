@@ -1,11 +1,7 @@
 <template>
   <div>
-    <q-card>
-      <q-card-section class="text-h6 bg-primary text-white">
-        {{ publications.length }} Veröffentlichungen
-      </q-card-section>
-      <q-card-section>
-        <q-list bordered class="rounded-borders">
+    <fs-card :title="publications.length + ' Veröffentlichungen'" icon="far fa-file-alt">
+      <q-list bordered class="rounded-borders">
           <q-expansion-item v-for="pub in publications"
                                 :key="pub.title"
                                 v-model="pub.expanded"
@@ -74,9 +70,7 @@
             </q-card>
           </q-expansion-item>
         </q-list>
-      </q-card-section>
-    </q-card>
-
+    </fs-card>
     <q-dialog v-model="isDialogQuoteVisible">
       <q-card style="width:700px;">
         <q-card-section>
@@ -113,9 +107,13 @@ import { makeFindMixin } from "feathers-vuex";
 
 import format from "date-fns/format";
 
+import FsCard from "components/FsCard";
+
 export default {
   name: "FsPublications",
-  components: {},
+  components: {
+    FsCard
+  },
   mixins: [
     makeFindMixin({ service: "publications" })
   ],
