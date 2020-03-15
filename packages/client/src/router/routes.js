@@ -1,3 +1,4 @@
+import { transitions } from "components/FsTransition";
 
 const routes = [
   {
@@ -5,12 +6,32 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
+        name: "PageIndex",
         path: "",
-        component: () => import("pages/PageIndex.vue")
+        component: () => import("pages/PageIndex.vue"),
+        meta: {
+          name: "Startseite",
+          transition: {
+            leaveNotOverridable: transitions.zoomIn,
+            enterNotOverridable: transitions.zoomOut,
+            leave: transitions.zoomIn,
+            enter: transitions.zoomOut,
+            overrideLeave: transitions.zoomOut,
+            overrideEnter: transitions.zoomIn
+          }
+        }
       },
       {
+        name: "PageCV",
         path: "cv",
-        component: () => import("pages/PageCv.vue")
+        component: () => import("pages/PageCv.vue"),
+        meta: {
+          name: "Lebenslauf",
+          transition: {
+            leave: transitions.zoomOut,
+            enter: transitions.zoomIn
+          }
+        }
       }
     ]
   }
