@@ -1,21 +1,25 @@
 <template>
   <div id="cv">
-    <fs-card title="Beruflicher Werdegang" icon="fas fa-briefcase">
+    <fs-card v-if="sortedJobs.length > 0" title="Beruflicher Werdegang" icon="fas fa-briefcase">
       <template v-slot:header-right>
-        <q-btn v-if="jobSortOrder > 0"
+        <q-btn v-if="sortedJobs.length > 1"
               v-slot:header-right
-              color="primary"
+              color="white"
+              text-color="black"
+              :icon="`fas ${(jobSortOrder > 0) ? 'fa-sort-numeric-down' : 'fa-sort-numeric-down-alt'}`"
               :label="jobSortOrder > 0 ? 'aufsteigend' : 'absteigend'"
               @click="jobSortOrder *= -1"></q-btn>
       </template>
-      <q-timeline color="primary" :layout="timelineLayout">
+      <q-timeline v-if="sortedJpbs.length > 0" color="primary" :layout="timelineLayout">
         <fs-job v-for="job in sortedJobs" :key="job.startAt.toString()" :job="job"></fs-job>
       </q-timeline>
     </fs-card>
-    <fs-card title="Ausbildung" icon="fas fa-graduation-cap">
+    <fs-card v-if="sortedStudiums.length > 0" title="Ausbildung" icon="fas fa-graduation-cap">
       <template v-slot:header-right>
-                <q-btn v-if="studySortOrder > 0"
-               color="primary"
+        <q-btn v-if="sortedStudiums.length > 1"
+               color="white"
+               text-color="black"
+               :icon="`fas ${(studySortOrder > 0) ? 'fa-sort-numeric-down' : 'fa-sort-numeric-down-alt'}`"
                :label="studySortOrder > 0 ? 'aufsteigend' : 'absteigend'"
                @click="studySortOrder *= -1"></q-btn>
       </template>
@@ -25,10 +29,12 @@
           </transition-group>
         </q-timeline>
     </fs-card>
-    <fs-card title="Außeruniversitäre Aktivitäten" icon="fas fa-project-diagram">
+    <fs-card v-if="sortedActivities.length > 0" title="Außeruniversitäre Aktivitäten" icon="fas fa-project-diagram">
       <template v-slot:header-right>
-        <q-btn v-if="activitySortOrder > 0"
-               color="primary"
+        <q-btn v-if="sortedActivities.length > 1"
+               color="white"
+               text-color="black"
+               :icon="`fas ${(activitySortOrder > 0) ? 'fa-sort-numeric-down' : 'fa-sort-numeric-down-alt'}`"
                :label="activitySortOrder > 0 ? 'aufsteigend' : 'absteigend'"
                @click="activitySortOrder *= -1"></q-btn>
       </template>
@@ -101,11 +107,11 @@ export default {
     },
     sortedStudiums() {
       const order = (this.studySortOrder > 0) ? "asc" : "desc";
-      return _orderBy(this.studies, "end", order);
+      return _orderBy(this.studies, "endAt", order);
     },
     sortedActivities() {
       const order = (this.activitySortOrder > 0) ? "asc" : "desc";
-      return _orderBy(this.activities, "end", order);
+      return _orderBy(this.activities, "endAt", order);
     },
     timelineLayout() {
       return this.$q.screen.lt.sm ? "dense" : "comfortable";

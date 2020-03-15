@@ -1,10 +1,10 @@
 <template>
   <q-card>
-    <q-card-section class="text-h6 bg-primary text-white">
-      <div class="text-h5">
+    <q-card-section class="text-h6 bg-primary text-white row">
+      <div class="col text-h5">
         <q-avatar color="primary" text-color="white" :icon="icon" /> {{ title }}
       </div>
-      <slot name="header-right"></slot>
+      <slot class="col-auto" name="header-right"></slot>
     </q-card-section>
     <q-separator></q-separator>
     <q-card-section>
@@ -27,15 +27,7 @@ export default {
       type: String,
       default: ""
     }
-  },
-  data() {
-    return {};
-  },
-  computed: {},
-  watch: {},
-  created() {},
-  mounted() {},
-  methods: {}
+  }
 };
 </script>
 

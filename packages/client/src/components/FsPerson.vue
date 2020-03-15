@@ -82,7 +82,9 @@ export default {
   methods: {
     scrolled: _debounce(function(pos) {
       this.scrollPos = pos;
-    }, 100)
+    }, 100, {
+      maxWait: 500
+    })
   }
 };
 </script>

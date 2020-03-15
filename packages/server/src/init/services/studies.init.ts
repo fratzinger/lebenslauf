@@ -9,8 +9,8 @@ export default {
       grade: "1.7",
       establishment: "Katholisches Schulzentrum Bernhardinum in Fürstenwalde (Brandenburg)",
       icon: "fas fa-school",
-      startAt: new Date(1999),
-      endAt: new Date(2011)
+      startAt: new Date(1999, 9),
+      endAt: new Date(2011, 6)
     },
     {
       title: "eBusiness",
