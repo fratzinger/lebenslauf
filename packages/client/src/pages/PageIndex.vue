@@ -3,24 +3,18 @@
     <div class="col row container-landing justify-center">
       <div class="container-img col-10 col-sm-5 col-md-4">
         <q-img :src="profilePic"
-               class="pic-profile"
+               class="pic-profile circle"
                spinner-color="white"
                :ratio="1"/>
-        <div class="gt-sm flex ">
-          <q-btn icon="fab fa-linkedin"
-                 class="full-width q-mb-md q-mr-sm"
-                 style="background: #0077b5; color: #fff;">
-                 <div class="col">Mein Linked-in Profil<external-link-icon /></div>
-          </q-btn>
-          <q-btn icon="fab fa-github-square"
-                 class="full-width q-mb-md q-mr-sm"
-                 style="background: #24292e; color: #fff">
-                 <div class="col">Mein Github Profil<external-link-icon /></div>
-          </q-btn>
-          <q-btn icon="fab fa-researchgate"
-                 class="full-width q-mb-md q-mr-sm"
-                 style="background: #00ccbb; color: #fff">
-                 <div class="col">Meine Veröffentlichungen<external-link-icon /></div>
+        <div class="gt-sm flex">
+          <q-btn v-for="link in btnLinks"
+                 :key="link.title"
+                 :to="link.to"
+                 :icon="link.icon"
+                 :style="link.style"
+                 class="full-width q-mb-md q-mr-sm">
+            <div class="col">{{ link.title }}</div>
+            <external-link-icon v-if="link.isExternal" />
           </q-btn>
         </div>
       </div>
@@ -101,7 +95,35 @@ export default {
   computed: {
     ...mapGetters("uploads", {
       profilePic: "profilePic"
-    })
+    }),
+    btnLinks() {
+      return [
+        {
+          title: "Lebenslauf",
+          icon: "fas fa-address-card",
+          isExternal: false,
+          to: { name: "PageCV" }
+        },
+        {
+          title: "Mein Linked-in Profil",
+          icon: "fab fa-linkedin",
+          isExternal: true,
+          style: { background: "#0077b5", color: "#fff" }
+        },
+        {
+          title: "Mein Github Profil",
+          icon: "fab fa-github-square",
+          isExternal: true,
+          style: { background: "#24292e", color: "#fff" }
+        },
+        {
+          title: "Mein Researchgate Profil",
+          icon: "fab fa-researchgate",
+          isExternal: true,
+          style: { background: "#00ccbb", color: "#fff" }
+        }
+      ];
+    }
   },
   watch: {}
 };
@@ -160,7 +182,6 @@ export default {
 
     .container-img {
       .pic-profile {
-        border-radius: 50%;
         margin-bottom: 20px;
       }
 
