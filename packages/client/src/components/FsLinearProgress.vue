@@ -8,10 +8,6 @@
 <script>
 // import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
 
-import {
-  debounce as _debounce
-} from "lodash-es";
-
 import gsap from "gsap";
 
 export default {

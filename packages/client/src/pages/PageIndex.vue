@@ -1,25 +1,31 @@
 <template>
   <q-page id="content-index" class="flex flex-center row">
     <div class="col row container-landing justify-center">
-      <div class="container-img col-10 col-sm-5 col-md-4">
-        <fs-transition name="slide-to-right" :ms="1000">
-          <q-img v-show="isVisible.profilePic"
-                        :src="profilePic"
-                        class="pic-profile circle"
-                        spinner-color="white"
-                        :ratio="1"
-                        v-intersection="setVisible('profilePic')"/>
-        </fs-transition>
-        <div class="gt-sm flex">
-          <q-btn v-for="link in btnLinks"
-                 :key="link.title"
-                 :to="link.to"
-                 :icon="link.icon"
-                 :style="link.style"
-                 class="full-width q-mb-md q-mr-sm">
-            <div class="col">{{ link.title }}</div>
-            <external-link-icon v-if="link.isExternal" />
-          </q-btn>
+      <div class="container-img col-10 col-sm-10 col-md-4">
+        <div class="row justify-center items-center q-gutter-md">
+          <div class="col-xs-10 col-sm-5 col-md-12">
+            <fs-transition name="slide-to-right" :ms="1000">
+              <q-img v-show="isVisible.profilePic"
+                            :src="profilePic"
+                            class="pic-profile circle"
+                            spinner-color="white"
+                            :ratio="1"
+                            v-intersection="setVisible('profilePic')"/>
+            </fs-transition>
+          </div>
+          <div class="col-sm-5 col-md-12">
+            <div class="gt-xs flex">
+              <q-btn v-for="link in btnLinks"
+                    :key="link.title"
+                    :to="link.to"
+                    :icon="link.icon"
+                    :style="link.style"
+                    class="full-width q-mb-md q-mr-sm">
+                <div class="col">{{ link.title }}</div>
+                <external-link-icon v-if="link.isExternal" />
+              </q-btn>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-12 col-sm-10 col-md-8">
@@ -212,6 +218,8 @@ export default {
     .container-img {
       .pic-profile {
         margin-bottom: 20px;
+        box-shadow: 0px 0px 58px rgba(0, 0, 0, 0.2);
+        border: 5px solid #FFF;
       }
 
       body.screen--md &,

@@ -49,7 +49,9 @@ export default {
     FsTransition
   },
   props: {},
-  mixins: [makeFindMixin({ service: "characteristics" })],
+  mixins: [
+    makeFindMixin({ service: "characteristics" })
+  ],
   data() {
     return {
       scrollPos: 0,
@@ -110,6 +112,7 @@ export default {
     width: 120px;
     border-radius: 50%;
     border: 3px solid #fff;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
   }
 }
 </style>

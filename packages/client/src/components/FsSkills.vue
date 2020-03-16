@@ -26,22 +26,28 @@
         </q-btn-dropdown>
       </div>
     </template>
-    <div v-for="(skills, cat) in skillsByCategory" :key="cat">
-      <q-card-section class="q-p-sm">
-        <div v-if="isGrouped" class="text-h6 q-mb-md">
-          {{ cat }} <q-badge>{{ skills.length }}</q-badge>
-        </div>
-        <transition-group name="flip-list" tag="div" class="row q-col-gutter-md">
-          <div v-for="skill in skills" :key="skill.id" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 column justify-between">
-            <div>
-              <span>{{ skill.name }}</span>
-              <span class="text-grey-6 text-caption"> - {{ skill.since }}</span>
+    <div class="row">
+      <div v-for="(skills, cat) in skillsByCategory"
+           :key="cat"
+           :class="{'col-lg-6': skillsByCategory.length > 1}"
+           class="col-12 col-lg-6 flex">
+        <q-card flat bordered class="full-width">
+          <q-card-section class="q-p-sm">
+            <div v-if="isGrouped" class="text-h6 q-mb-md">
+              {{ cat }} <q-badge>{{ skills.length }}</q-badge>
             </div>
-            <fs-linear-progress :value="skill.linearValue" :color="skill.color || 'primary'" size="7px"></fs-linear-progress>
-          </div>
-        </transition-group>
-      </q-card-section>
-      <q-separator />
+            <transition-group name="flip-list" tag="div" class="row q-col-gutter-md">
+              <div v-for="skill in skills" :key="skill.id" class="col-xs-6 col-sm-4 col-md-3 col-lg-3 column justify-between">
+                <div>
+                  <span>{{ skill.name }}</span>
+                  <span class="text-grey-6 text-caption"> - {{ skill.since }}</span>
+                </div>
+                <fs-linear-progress :value="skill.linearValue" :color="skill.color || 'primary'" size="7px"></fs-linear-progress>
+              </div>
+            </transition-group>
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
   </fs-card>
 </template>
