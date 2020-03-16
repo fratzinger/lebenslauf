@@ -3,6 +3,7 @@
     <template v-slot:header-right>
       <div>
         <q-toggle v-model="isGrouped"
+                  color="green"
                   label="gruppieren"
                   left-label/>
         <q-btn-dropdown color="primary">
@@ -36,7 +37,7 @@
               <span>{{ skill.name }}</span>
               <span class="text-grey-6 text-caption"> - {{ skill.since }}</span>
             </div>
-            <q-linear-progress :value="skill.linearValue" :color="skill.color || 'primary'" size="7px"></q-linear-progress>
+            <fs-linear-progress :value="skill.linearValue" :color="skill.color || 'primary'" size="7px"></fs-linear-progress>
           </div>
         </transition-group>
       </q-card-section>
@@ -51,6 +52,7 @@
 import { makeFindMixin } from "feathers-vuex";
 
 import FsCard from "components/FsCard";
+import FsLinearProgress from "components/FsLinearProgress";
 
 import {
   orderBy as _orderBy,
@@ -60,7 +62,8 @@ import {
 export default {
   name: "FsSkills",
   components: {
-    FsCard
+    FsCard,
+    FsLinearProgress
   },
   mixins: [
     makeFindMixin({ service: "skills" })

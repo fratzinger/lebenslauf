@@ -10,7 +10,7 @@
               :label="jobSortOrder > 0 ? 'aufsteigend' : 'absteigend'"
               @click="jobSortOrder *= -1"></q-btn>
       </template>
-      <q-timeline v-if="sortedJpbs.length > 0" color="primary" :layout="timelineLayout">
+      <q-timeline v-if="sortedJobs.length > 0" color="primary" :layout="timelineLayout">
         <fs-job v-for="job in sortedJobs" :key="job.startAt.toString()" :job="job"></fs-job>
       </q-timeline>
     </fs-card>

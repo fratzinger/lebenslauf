@@ -56,7 +56,7 @@ module.exports = function(ctx) {
       },
       distDir: process.env.NODE_ENV === "production" ? "../server/public" : `dist/${ctx.modeName}`,
 
-      transpileDependencies: ["feathers-vuex"],
+      transpileDependencies: ["feathers-vuex", "gsap"],
 
       env: {
         HOST: JSON.stringify(process.env.HOST),

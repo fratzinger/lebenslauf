@@ -37,6 +37,7 @@
     "date-fns": "^2.11.0",
     "emoji-mart-vue": "^2.6.6",
     "feathers-vuex": "^3.8.1",
+    "gsap": "^3.2.4",
     "lodash-es": "^4.17.15",
     "prism-themes": "^1.3.0",
     "prismjs": "^1.19.0",
