@@ -33,7 +33,7 @@
     "@feathersjs/socketio-client": "^4.5.1",
     "@quasar/extras": "^1.5.2",
     "@vue/composition-api": "^0.4.0",
-    "date-fns": "^2.9.0",
+    "date-fns": "^2.10.0",
     "feathers-vuex": "^3.6.1",
     "lodash-es": "^4.17.15",
     "quasar": "^1.9.3",
